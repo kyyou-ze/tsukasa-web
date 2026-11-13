@@ -49,11 +49,6 @@ export default function Commands() {
 
           <div className="terminal" key={group.id}>
             <div className="terminal__bar">
-              <span className="terminal__dots" aria-hidden="true">
-                <i />
-                <i />
-                <i />
-              </span>
               <span className="terminal__title">tsukasa / {group.label.toLowerCase()}</span>
             </div>
             <ul className="terminal__list">
