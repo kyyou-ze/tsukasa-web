@@ -53,10 +53,6 @@ export default function Hero() {
       <div className="hero__glow" aria-hidden="true" />
       <div className="container hero__grid">
         <div className="hero__copy">
-          <span className="pill">
-            <Icon name="chat" size={14} />
-            Nomor bot · {BOT_DISPLAY}
-          </span>
           <h1 className="hero__title">
             Bikin sticker,
             <br />
