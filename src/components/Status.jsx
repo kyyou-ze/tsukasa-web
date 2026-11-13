@@ -65,10 +65,10 @@ export default function Status() {
         <div className="status">
           <Reveal className="status__copy">
             <span className="eyebrow">Status live</span>
-            <h2 className="section__title">Bot-nya benar-benar hidup</h2>
+            <h2 className="section__title">Angka dari bot, bukan dari caption.</h2>
             <p className="section__lead">
-              Panel ini membaca data langsung dari HTTP API bot. Kalau bot sedang
-              offline, angkanya berhenti dan status berubah otomatis.
+              Panel ini memanggil <code>GET /status</code> tiap 30 detik. Kalau bot
+              tidak terjangkau, nilai di samping berhenti dan statusnya berubah.
             </p>
 
             <div className={`status__badge ${statusClass}`}>

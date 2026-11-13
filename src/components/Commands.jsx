@@ -24,10 +24,10 @@ export default function Commands() {
       <div className="container">
         <Reveal className="section__head">
           <span className="eyebrow">Command</span>
-          <h2 className="section__title">Dari perintah sederhana</h2>
+          <h2 className="section__title">Perintah yang bisa langsung dicoba</h2>
           <p className="section__lead">
-            Semua dimulai dari <code>.menu</code>. Contoh di bawah bisa langsung kamu
-            salin dan kirim ke bot.
+            Salin, kirim ke bot. Prefix <code>.</code> <code>!</code> <code>/</code>{' '}
+            semuanya jalan; contoh di bawah pakai titik.
           </p>
         </Reveal>
 

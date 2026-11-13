@@ -4,7 +4,20 @@
 const rawApi = String(import.meta.env.VITE_BOT_API_URL || '').trim();
 export const BOT_API_URL = rawApi.replace(/\/+$/, '');
 
-export const BOT_NUMBER = String(import.meta.env.VITE_BOT_NUMBER || '').replace(/\D+/g, '');
+// Nomor bot dipakai tombol chat. Fallback ini membuat tombol tetap jalan
+// walau env Vercel belum diisi.
+const FALLBACK_NUMBER = '6283117176441';
+
+export const BOT_NUMBER =
+  String(import.meta.env.VITE_BOT_NUMBER || '').replace(/\D+/g, '') || FALLBACK_NUMBER;
+
+export const BOT_DISPLAY = (() => {
+  const n = BOT_NUMBER;
+  if (!n) return '';
+  if (n.length >= 12) return `+${n.slice(0, 2)} ${n.slice(2, 5)}-${n.slice(5, 9)}-${n.slice(9)}`;
+  return `+${n}`;
+})();
+
 export const CHANNEL_URL = String(import.meta.env.VITE_CHANNEL_URL || '').trim();
 
 export function waLink(text) {

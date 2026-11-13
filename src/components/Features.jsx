@@ -8,10 +8,10 @@ export default function Features() {
       <div className="container">
         <Reveal className="section__head">
           <span className="eyebrow">Fitur</span>
-          <h2 className="section__title">Yang bisa Tsukasa lakukan</h2>
+          <h2 className="section__title">Yang paling sering dipakai</h2>
           <p className="section__lead">
-            Bukan sekadar bot auto-reply. Semua fitur ini jalan dari satu nomor WhatsApp
-            yang sama, tanpa perlu instal apa pun.
+            Enam di bawah ini yang paling ramai. Daftar lengkapnya ada di{' '}
+            <code>.menu</code>: 75 kategori, 2.327 perintah, dari sticker sampai RPG.
           </p>
         </Reveal>
 

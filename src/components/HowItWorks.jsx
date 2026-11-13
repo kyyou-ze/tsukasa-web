@@ -7,7 +7,7 @@ export default function HowItWorks() {
       <div className="container">
         <Reveal className="section__head">
           <span className="eyebrow">Cara pakai</span>
-          <h2 className="section__title">Tiga langkah, langsung jalan</h2>
+          <h2 className="section__title">Tiga langkah</h2>
         </Reveal>
 
         <div className="steps">

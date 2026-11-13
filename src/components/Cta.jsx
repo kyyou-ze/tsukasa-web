@@ -8,10 +8,10 @@ export default function Cta() {
       <div className="container">
         <Reveal className="cta__inner">
           <span className="eyebrow">Mulai sekarang</span>
-          <h2 className="cta__title">Grup kamu butuh Tsukasa.</h2>
+          <h2 className="cta__title">Mulai dari satu perintah.</h2>
           <p className="cta__lead">
-            Simpan nomornya, kirim <code>.menu</code>, dan lihat sendiri. Gratis,
-            tanpa instal aplikasi.
+            Simpan nomornya, kirim <code>.menu</code>. Kalau bingung,{' '}
+            <code>.help &lt;perintah&gt;</code> menjelaskan cara pakainya.
           </p>
           <a className="btn btn--primary btn--lg" href={waLink('.menu')} target="_blank" rel="noreferrer">
             Chat Tsukasa

@@ -18,8 +18,8 @@ export default function Footer() {
             </span>
           </a>
           <p className="footer__note">
-            Bot WhatsApp untuk grup &amp; komunitas. Dibuat untuk dipakai, bukan
-            dipamerkan.
+            Bot WhatsApp untuk grup dan komunitas. Kode dan dokumentasinya terbuka
+            di GitHub.
           </p>
         </div>
 
