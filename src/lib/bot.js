@@ -1,7 +1,9 @@
 // Akses konfigurasi & API bot. Semua nilai berasal dari environment Vite
 // (VITE_*) supaya bisa diubah lewat dashboard Vercel tanpa mengubah kode.
-
-const rawApi = String(import.meta.env.VITE_BOT_API_URL || '').trim();
+// Fallback domain dipakai kalau env Vercel belum diisi saat build, supaya
+// panel status tetap terhubung ke API bot.
+const FALLBACK_API = 'https://bot.goyomi.my.id';
+const rawApi = String(import.meta.env.VITE_BOT_API_URL || FALLBACK_API).trim();
 export const BOT_API_URL = rawApi.replace(/\/+$/, '');
 
 // Nomor bot dipakai tombol chat. Fallback ini membuat tombol tetap jalan
