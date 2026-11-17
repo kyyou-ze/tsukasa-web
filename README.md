@@ -39,6 +39,7 @@ Endpoint ini harus mengembalikan JSON publik (tanpa API key) dalam bentuk:
   "ok": true,
   "bot": "Tsukasa",
   "version": "1.0.0",
+  "botNumber": "6285600575853",
   "uptimeSec": 12345,
   "waReady": true,
   "categories": 72,
@@ -49,10 +50,12 @@ Endpoint ini harus mengembalikan JSON publik (tanpa API key) dalam bentuk:
 ```
 
 Bot juga perlu mengizinkan CORS dari domain landing page. Lihat
-`HTTP_CORS_ORIGIN` di repo bot. Kalau `VITE_BOT_API_URL` kosong, panel status
-menampilkan pesan "Belum dikonfigurasi" dan situs tetap berjalan normal.
+`HTTP_CORS_ORIGIN` di repo bot. Kalau `VITE_BOT_API_URL` kosong, situs memakai
+`https://bot.goyomi.my.id`, jadi panel status tetap berjalan.
 
-Tombol **Chat bot** memakai `https://wa.me/{VITE_BOT_NUMBER}?text=.menu`.
+Nomor WhatsApp bot dideteksi otomatis dari field `botNumber` pada
+`GET /status`. Semua tombol **Chat bot** dan tautan `wa.me` memakai nomor hasil
+deteksi itu, tanpa perlu mengisi `VITE_BOT_NUMBER`.
 
 ## Build & deploy
 
