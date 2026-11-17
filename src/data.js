@@ -139,6 +139,7 @@ export const navLinks = [
   { href: '#fitur', label: 'Fitur' },
   { href: '#command', label: 'Perintah' },
   { href: '#cara', label: 'Cara pakai' },
+  { href: '#simulasi', label: 'Simulasi' },
   { href: '#status', label: 'Status' },
   { href: '#faq', label: 'FAQ' },
 ];

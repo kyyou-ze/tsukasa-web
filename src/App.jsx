@@ -3,6 +3,7 @@ import Hero from './components/Hero.jsx';
 import Features from './components/Features.jsx';
 import Commands from './components/Commands.jsx';
 import HowItWorks from './components/HowItWorks.jsx';
+import ChatSim from './components/ChatSim.jsx';
 import Status from './components/Status.jsx';
 import Faq from './components/Faq.jsx';
 import Cta from './components/Cta.jsx';
@@ -17,6 +18,7 @@ export default function App() {
         <Features />
         <Commands />
         <HowItWorks />
+        <ChatSim />
         <Status />
         <Faq />
         <Cta />

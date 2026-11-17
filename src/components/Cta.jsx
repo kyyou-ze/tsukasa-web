@@ -1,8 +1,10 @@
 import Icon from './Icon.jsx';
 import Reveal from './Reveal.jsx';
 import { waLink } from '../lib/bot.js';
+import { useBotNumber } from '../lib/useBotNumber.js';
 
 export default function Cta() {
+  useBotNumber();
   return (
     <section className="section cta">
       <div className="container">

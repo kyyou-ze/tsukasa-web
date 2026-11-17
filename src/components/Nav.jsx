@@ -2,8 +2,10 @@ import { useEffect, useState } from 'react';
 import Icon from './Icon.jsx';
 import { navLinks } from '../data.js';
 import { waLink } from '../lib/bot.js';
+import { useBotNumber } from '../lib/useBotNumber.js';
 
 export default function Nav() {
+  useBotNumber();
   const [open, setOpen] = useState(false);
   const [solid, setSolid] = useState(false);
 

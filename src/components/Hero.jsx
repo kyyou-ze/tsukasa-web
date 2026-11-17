@@ -1,5 +1,6 @@
 import Icon from './Icon.jsx';
-import { BOT_DISPLAY, waLink } from '../lib/bot.js';
+import { waLink } from '../lib/bot.js';
+import { useBotNumber } from '../lib/useBotNumber.js';
 
 function ChatMock() {
   return (
@@ -48,6 +49,7 @@ function ChatMock() {
 }
 
 export default function Hero() {
+  useBotNumber();
   return (
     <section className="hero" id="atas">
       <div className="hero__glow" aria-hidden="true" />

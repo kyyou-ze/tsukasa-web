@@ -1,8 +1,10 @@
 import Icon from './Icon.jsx';
 import { navLinks } from '../data.js';
 import { CHANNEL_URL, waLink } from '../lib/bot.js';
+import { useBotNumber } from '../lib/useBotNumber.js';
 
 export default function Footer() {
+  useBotNumber();
   const year = new Date().getFullYear();
   return (
     <footer className="footer">

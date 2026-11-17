@@ -17,8 +17,8 @@ Buka `http://localhost:5173`.
 
 | Variabel | Wajib | Keterangan |
 | --- | --- | --- |
-| `VITE_BOT_API_URL` | untuk status live | URL publik HTTP API bot, tanpa garis miring di akhir. Contoh `https://bot.domain.com`. |
-| `VITE_BOT_NUMBER` | ya | Nomor WhatsApp bot, format internasional tanpa `+`/spasi. Contoh `6281234567890`. |
+| `VITE_BOT_API_URL` | tidak | URL publik HTTP API bot, tanpa garis miring di akhir. Kalau kosong, dipakai `https://bot.goyomi.my.id`. |
+| `VITE_BOT_NUMBER` | tidak | Override manual nomor WhatsApp bot. Normalnya nomor dideteksi otomatis dari `GET /status` (`botNumber`). |
 | `VITE_CHANNEL_URL` | tidak | Link channel WhatsApp yang ditampilkan di footer. |
 
 Semua variabel dibaca saat build. Di Vercel, isi lewat **Project → Settings →

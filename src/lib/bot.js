@@ -6,24 +6,25 @@ const FALLBACK_API = 'https://bot.goyomi.my.id';
 const rawApi = String(import.meta.env.VITE_BOT_API_URL || FALLBACK_API).trim();
 export const BOT_API_URL = rawApi.replace(/\/+$/, '');
 
-// Nomor bot dipakai tombol chat. Fallback ini membuat tombol tetap jalan
-// walau env Vercel belum diisi.
-const FALLBACK_NUMBER = '6283117176441';
+import { formatBotNumber, getBotNumber, setBotNumber } from './botInfo.js';
 
-export const BOT_NUMBER =
-  String(import.meta.env.VITE_BOT_NUMBER || '').replace(/\D+/g, '') || FALLBACK_NUMBER;
+// Nomor bot dipakai tombol chat. Nilai bisa berubah otomatis setelah
+// GET /status mengembalikan `botNumber` (lihat Status.jsx).
+export { setBotNumber };
 
-export const BOT_DISPLAY = (() => {
-  const n = BOT_NUMBER;
-  if (!n) return '';
-  if (n.length >= 12) return `+${n.slice(0, 2)} ${n.slice(2, 5)}-${n.slice(5, 9)}-${n.slice(9)}`;
-  return `+${n}`;
-})();
+export function botNumber() {
+  return getBotNumber();
+}
+
+export function botDisplay() {
+  return formatBotNumber(getBotNumber());
+}
 
 export const CHANNEL_URL = String(import.meta.env.VITE_CHANNEL_URL || '').trim();
 
 export function waLink(text) {
-  const base = BOT_NUMBER ? `https://wa.me/${BOT_NUMBER}` : 'https://wa.me/';
+  const number = getBotNumber();
+  const base = number ? `https://wa.me/${number}` : 'https://wa.me/';
   return text ? `${base}?text=${encodeURIComponent(text)}` : base;
 }
 
@@ -47,6 +48,9 @@ export async function fetchBotStatus(signal) {
     });
     if (!res.ok) return { online: false, configured: true, error: `HTTP ${res.status}` };
     const data = await res.json();
+    // Nomor bot dideteksi otomatis dari API, jadi semua tautan wa.me ikut
+    // memakai nomor yang benar tanpa mengubah env Vercel.
+    if (data && data.botNumber) setBotNumber(data.botNumber);
     return { ...data, online: true, configured: true };
   } catch (err) {
     if (err && err.name === 'AbortError') throw err;

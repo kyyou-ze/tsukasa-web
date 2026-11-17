@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Icon from './Icon.jsx';
 import Reveal from './Reveal.jsx';
-import { BOT_API_URL, fetchBotStatus, formatUptime, formatNumber, hasApi } from '../lib/bot.js';
+import { fetchBotStatus, formatUptime, formatNumber } from '../lib/bot.js';
 
 const REFRESH_MS = 30000;
 
@@ -66,10 +66,6 @@ export default function Status() {
           <Reveal className="status__copy">
             <span className="eyebrow">Status live</span>
             <h2 className="section__title">Angka dari bot, bukan dari caption.</h2>
-            <p className="section__lead">
-              Panel ini memanggil <code>GET /status</code> tiap 30 detik. Kalau bot
-              tidak terjangkau, nilai di samping berhenti dan statusnya berubah.
-            </p>
 
             <div className={`status__badge ${statusClass}`}>
               <span className="dot" />
@@ -78,20 +74,6 @@ export default function Status() {
                 <span className="status__hint">WA menyambung ulang</span>
               ) : null}
             </div>
-
-            <p className="status__meta">
-              {!configured ? (
-                <>
-                  Isi <code>VITE_BOT_API_URL</code> di environment Vercel untuk
-                  mengaktifkan panel ini.
-                </>
-              ) : (
-                <>
-                  Sumber: <code>{BOT_API_URL}</code>
-                  {sync ? ` · diperbarui ${sync.toLocaleTimeString('id-ID')}` : ''}
-                </>
-              )}
-            </p>
 
             <button type="button" className="btn btn--ghost btn--sm" onClick={() => setTick((v) => v + 1)}>
               <Icon name="pulse" size={16} />
